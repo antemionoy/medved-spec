@@ -47,7 +47,9 @@
         </div>
         <div class="header__container container">
             <div class="header__bottom d-flex">
-                <img class="header__logo logo" src="../img/logo.png" alt="logo">
+                <a href="#">
+                    <img class="header__logo logo" src="../img/logo.png" alt="logo">
+                </a>
                 <div class="header__contacts contacts-info">
                     <p class="contacts-info__title">Часы работы</p>
                     <p class="contacts-info__text">с 9:00 до 22:00</p>
@@ -107,11 +109,154 @@
                     </ul>
                 </aside>
                 <div class="catalog__content">
-
                     <div class="catalog__card card">
-                        <div class="card__title">Жилет Рыбака</div>
+                        <h1 class="card__title">Жилет Рыбака</h1>
+                        <div class="card__row d-flex">
+                            <div class="card__dots card-dots d-flex">
+                                <div class="card-dots__item">
+                                    <img src="img/card-dots-image.png" alt="" class="card-dots__image">
+                                </div>
+                                <div class="card-dots__item">
+                                    <img src="img/card-dots-image.png" alt="" class="card-dots__image">
+                                </div>
+                            </div>
+                            <div class="card__carousel d-flex">
+                                <div class="card__slide">
+                                    <img src="img/card-image.jpg" alt="" class="card__image">
+                                    <a href="#" class="card__zoom"></a>
+                                </div>
+                                <div class="card__slide">
+                                    <img src="img/card-dots-image.png" alt="" class="card__image">
+                                    <a href="#" class="card__zoom"></a>
+                                </div>
+                            </div>
+                            <div class="card__info d-flex">
+                                <p class="card__p">Бренд: Columbia</p>
+                                <p class="card__p">Комплектность: Жилет</p>
+                                <p class="card__p">Сезон: Лето</p>
+                                <p class="card__p">Цвет: <span class="card__color"></span> <span class="card__color card__color_red"></span></p>
+                                <p class="card__p">Выберите размер:</p>
+                                <form class="card__size size d-flex">
+                                    <div class="size__item">
+                                        <input class="size__input" type="radio" id="size_1" name="size" checked="">
+                                        <label for="size_1" class="size__label">46</label>
+                                    </div>
+                                    <div class="size__item">
+                                        <input class="size__input" type="radio" id="size_2" name="size">
+                                        <label for="size_2" class="size__label">46</label>
+                                    </div>
+                                    <div class="size__item">
+                                        <input class="size__input" type="radio" id="size_3" name="size">
+                                        <label for="size_3" class="size__label">46</label>
+                                    </div>
+                                    <div class="size__item">
+                                        <input class="size__input" type="radio" id="size_4" name="size">
+                                        <label for="size_4" class="size__label">46</label>
+                                    </div>
+                                </form>
+                                <a href="№" class="card__link">Таблица размеров</a>
+                                <div class="card__price">3200р</div>
+                                <a href="#" class="card__btn btn btn_busket-in">Купить</a>
+                            </div>
+                            <div class="card__info card__info_last">
+                                <p class="card__p">Материал: Хлопок, полиэстер</p>
+                                <p class="card__p">Уход: Машинная стрика
+                                    <br>в холодной воде
+                                    <br>
+                                    <img src="img/card-icon__one.png" alt="" class="card__info-icon card__icon_one">
+                                    <img src="img/card-icon__two.png" alt="" class="card__info-icon card__icon_two">
+                                </p>
+                            </div>
+                        </div>
                     </div>
-
+                    <div class="card__steps steps d-flex">
+                        <div class="steps__item  d-flex">
+                            <div class="steps__name">Описание товара</div>
+                            <div class="steps__text">
+                                Жилет рыбака с 12 карманами и вкладышем держателя удочки. Вы можете держать все свое снаряжение вместе, пока рыбачите. Состав ткани с двойной сеткой позволяет вам не перегреваться в жару, а специальная система комфорта обеспечивает идеальную, удобную посадку для максимальной мобильности.
+                            </div>
+                        </div>
+                        <div class="steps__item d-flex">
+                            <div class="steps__name">Оплата</div>
+                            <div class="steps__text">
+                                Жилет рыбака с 12 карманами и вкладышем держателя удочки. Вы можете держать все свое снаряжение вместе, пока рыбачите. Состав ткани с двойной сеткой позволяет вам не перегреваться в жару, а специальная система комфорта обеспечивает идеальную, удобную посадку для максимальной мобильности.
+                            </div>
+                        </div>
+                        <div class="steps__item d-flex">
+                            <div class="steps__name">Доставка</div>
+                            <div class="steps__text">
+                                Жилет рыбака с 12 карманами и вкладышем держателя удочки. Вы можете держать все свое снаряжение вместе, пока рыбачите. Состав ткани с двойной сеткой позволяет вам не перегреваться в жару, а специальная система комфорта обеспечивает идеальную, удобную посадку для максимальной мобильности.
+                            </div>
+                        </div>
+                        <div class="steps__line">
+                            <div class="steps__position"></div>
+                        </div>
+                    </div>
+                    <div class="card__similar similar">
+                        <h2 class="similar__title title title_h2">Похожие товары:</h2>
+                        <div class="similar__carousel">
+                            <div class="similar__slide">
+                                <div class="goods__card">
+                                    <img src="img/goods__image.png" alt="" class="goods__image">
+                                    <div class="goods__name">Костюм медицинский женский Лотос</div>
+                                    <div class="goods__center d-flex">
+                                        <div class="goods__price">6 000р</div>
+                                        <div class="goods__stars"></div>
+                                    </div>
+                                    <div class="goods__bottom d-flex">
+                                        <button class="goods__btn btn btn_busket-in">В корзину</button>
+                                        <button class="goods__look"></button>
+                                        <button class="goods__like"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="similar__slide">
+                                <div class="goods__card">
+                                    <img src="img/goods__image.png" alt="" class="goods__image">
+                                    <div class="goods__name">Костюм медицинский женский Лотос</div>
+                                    <div class="goods__center d-flex">
+                                        <div class="goods__price">6 000р</div>
+                                        <div class="goods__stars"></div>
+                                    </div>
+                                    <div class="goods__bottom d-flex">
+                                        <button class="goods__btn btn btn_busket-in">В корзину</button>
+                                        <button class="goods__look"></button>
+                                        <button class="goods__like"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="similar__slide">
+                                <div class="goods__card">
+                                    <img src="img/goods__image.png" alt="" class="goods__image">
+                                    <div class="goods__name">Костюм медицинский женский Лотос</div>
+                                    <div class="goods__center d-flex">
+                                        <div class="goods__price">6 000р</div>
+                                        <div class="goods__stars"></div>
+                                    </div>
+                                    <div class="goods__bottom d-flex">
+                                        <button class="goods__btn btn btn_busket-in">В корзину</button>
+                                        <button class="goods__look"></button>
+                                        <button class="goods__like"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="similar__slide">
+                                <div class="goods__card">
+                                    <img src="img/goods__image.png" alt="" class="goods__image">
+                                    <div class="goods__name">Костюм медицинский женский Лотос</div>
+                                    <div class="goods__center d-flex">
+                                        <div class="goods__price">6 000р</div>
+                                        <div class="goods__stars"></div>
+                                    </div>
+                                    <div class="goods__bottom d-flex">
+                                        <button class="goods__btn btn btn_busket-in">В корзину</button>
+                                        <button class="goods__look"></button>
+                                        <button class="goods__like"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -146,9 +291,9 @@
                 <a href="88003335574" class="social__phone">8 800 333 55 74</a>
                 <a href="mailto:" class="social__mail">info@medved.ru</a>
                 <div class="social__bottom d-flex">
-                    <a href="#" class="social__icon">inst</a>
-                    <a href="#" class="social__icon">vk</a>
-                    <a href="#" class="social__icon">fb</a>
+                    <a href="#" class="social__icon social__icon_inst">inst</a>
+                    <a href="#" class="social__icon social__icon_vk">vk</a>
+                    <a href="#" class="social__icon social__icon_fb">fb</a>
                 </div>
             </div>
         </div>
