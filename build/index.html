@@ -16,7 +16,32 @@
             <div class="header__container container">
                 <div class="header__row d-flex">
                     <div class="header__lk lk">
-                        <div class="lk__name">Личный кабинет</div>
+                        <button class="lk__name  header__name-js">Личный кабинет</button>
+                        <div class="lk__modal">
+                            <form action="#" class="lk__form form">
+                                <div class="form__title">Вход в личный кабинет</div>
+                                <div class="form__group">
+                                    <label for="#" class="form__label form__label_block ">Логин <span class="form__req">*</span></label>
+                                    <input type="text" class="form__input">
+                                </div>
+                                <div class="form__group">
+                                    <label for="#" class="form__label form__label_block ">Пароль <span class="form__req">*</span></label>
+                                    <input type="text" class="form__input">
+                                </div>
+                                <div class="lk__bottom d-flex">
+                                    <div class="form__personal personal">
+                                        <input id="personal_0" type="checkbox" class="personal__input">
+                                        <label for="personal_0" class="personal__label">Запомнить меня</label>
+                                    </div>
+                                    <a href="#" class="form__link">Забыли пароль?</a>
+                                </div>
+                                <div class="lk__buttons d-flex">
+                                    <a href="#" class="lk__btn btn btn_blue">Войти</a>
+                                    <a href="#" class="lk__btn lk__btn_big btn btn_stule-blue">Регистрация</a>
+                                </div>
+                            </form>
+                            <a href="#" class="lk__close"></a>
+                        </div>
                     </div>
                     <div class="header__center d-flex">
                         <ul class="header__menu menu d-flex">
@@ -38,12 +63,22 @@
                         </ul>
                         <form class="header__search form-search">
                             <label class="form-search__label">поиск</label>
-                            <input class="form-search__input" type="text">
+                            <input class="form-search__input form__input_icon" type="text" placeholder="введите название товара">
                         </form>
                     </div>
-                    <div class="header__busket busket">
-                        <p class="busket__text">В корзине: <span class="busket__value">1</span></p>
-                    </div>
+                    <a href="#" class="header__basket basket">
+                        <p class="basket__name">В корзине: <span class="busket__value">1</span></p>
+                        <div class="basket__modal">
+                            <div class="basket__top">
+                                <div class="basket__title">Ваш заказ</div>
+                                <div class="basket__row">
+                                    <img src="../img/maska-small.png" class="basket__image" alt="">
+                                    <div class="basket__text">Маска сварщика 3М™ (светофильтр 54*107 мм)</div>
+                                    <div class="basket__price">22 300р</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -64,7 +99,8 @@
             <div class="header__promo">
                 <h1 class="header__title">Медведь-товары для охраны труда и жизни</h1>
                 <div class="header__desc">
-                    Разумные цены и стандартизированное качество продукции — приоритет нашего магазина. <br>Более 10 000 товаров для Вас
+                    Разумные цены и стандартизированное качество продукции — приоритет нашего магазина.
+                    <br>Более 10 000 товаров для Вас
                 </div>
                 <a href="#" class="header__btn btn">Перейти в каталог</a>
             </div>
@@ -161,7 +197,39 @@
                                 <div class="goods__stars"></div>
                             </div>
                             <div class="goods__bottom d-flex">
-                                <button class="goods__btn btn btn_busket-in">В корзину</button>
+                                <button class="goods__btn btn btn_busket-in" data-remodal-target="modal-add">В корзину</button>
+                                <button class="goods__look"></button>
+                                <button class="goods__like"></button>
+                            </div>
+                            <div class="goods__status goods__status_new">new</div>
+                        </div>
+                    </div>
+                    <div class="goods__col">
+                        <div class="goods__card">
+                            <img src="img/goods__image.png" alt="" class="goods__image">
+                            <div class="goods__name">Костюм медицинский женский Лотос</div>
+                            <div class="goods__center d-flex">
+                                <div class="goods__price">6 000р</div>
+                                <div class="goods__stars"></div>
+                            </div>
+                            <div class="goods__bottom d-flex">
+                                <button class="goods__btn btn btn_busket-in" data-remodal-target="modal-add">В корзину</button>
+                                <button class="goods__look"></button>
+                                <button class="goods__like"></button>
+                            </div>
+                            <div class="goods__status goods__status_hit">hit</div>
+                        </div>
+                    </div>
+                    <div class="goods__col">
+                        <div class="goods__card">
+                            <img src="img/goods__image.png" alt="" class="goods__image">
+                            <div class="goods__name">Костюм медицинский женский Лотос</div>
+                            <div class="goods__center d-flex">
+                                <div class="goods__price">6 000р</div>
+                                <div class="goods__stars"></div>
+                            </div>
+                            <div class="goods__bottom d-flex">
+                                <button class="goods__btn btn btn_busket-in" data-remodal-target="modal-add">В корзину</button>
                                 <button class="goods__look"></button>
                                 <button class="goods__like"></button>
                             </div>
@@ -176,37 +244,7 @@
                                 <div class="goods__stars"></div>
                             </div>
                             <div class="goods__bottom d-flex">
-                                <button class="goods__btn btn btn_busket-in">В корзину</button>
-                                <button class="goods__look"></button>
-                                <button class="goods__like"></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="goods__col">
-                        <div class="goods__card">
-                            <img src="img/goods__image.png" alt="" class="goods__image">
-                            <div class="goods__name">Костюм медицинский женский Лотос</div>
-                            <div class="goods__center d-flex">
-                                <div class="goods__price">6 000р</div>
-                                <div class="goods__stars"></div>
-                            </div>
-                            <div class="goods__bottom d-flex">
-                                <button class="goods__btn btn btn_busket-in">В корзину</button>
-                                <button class="goods__look"></button>
-                                <button class="goods__like"></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="goods__col">
-                        <div class="goods__card">
-                            <img src="img/goods__image.png" alt="" class="goods__image">
-                            <div class="goods__name">Костюм медицинский женский Лотос</div>
-                            <div class="goods__center d-flex">
-                                <div class="goods__price">6 000р</div>
-                                <div class="goods__stars"></div>
-                            </div>
-                            <div class="goods__bottom d-flex">
-                                <button class="goods__btn btn btn_busket-in">В корзину</button>
+                                <button class="goods__btn btn btn_busket-in" data-remodal-target="modal-add">В корзину</button>
                                 <button class="goods__look"></button>
                                 <button class="goods__like"></button>
                             </div>
@@ -477,6 +515,16 @@
         </div>
     </div>
 </footer>
+<div class="remodal remodal-add" data-remodal-id="modal-add">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="remodal-add__icon"></div>
+    <div class="remodal-add__title">Товар успешно добавлен в корзину</div>
+    <p class="remodal-add__p">В вашей корзине 2 товара на сумму 24 800 р</p>
+    <div class="remodal-add__bottom d-flex">
+        <a href="#" class="remodal-add__btn remodal-add__btn_border-red">Продолжить покупки</a>
+        <a href="#" class="remodal-add__btn remodal-add__btn_bgr-red">Перейти в корзину</a>
+    </div>
+</div>
 <script src="js/main.js"></script>
 </body>
 

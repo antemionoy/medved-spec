@@ -6,6 +6,12 @@
 
 /*=../../bower_components/select2/dist/css/select2.min.css*/
 
+
+/*=../../bower_components/remodal/dist/remodal-default-theme.css*/
+
+
+/*=../../bower_components/remodal/dist/remodal.css*/
+
 @import "partials/vars";
 @import "partials/mixin";
 * {
@@ -127,7 +133,7 @@ body {
 // btn
 .btn {
     height: 60px;
-    padding: 10px 40px;
+    padding: 18px 40px;
     font-size: 18px;
     font-weight: 300;
     color: #fff;
@@ -138,12 +144,17 @@ body {
     text-align: center;
     &_stule-blue {
         border: 1px solid #2084f5;
-        padding: 10px 18px;
+        padding: 13px 18px;
         font-size: 15px;
         font-weight: 400;
         height: 47px;
         color: #000;
         background: transparent;
+        &:hover,
+        &:focus {
+            background-color: #5d8aff;
+            color: #fff;
+        }
     }
     &_busket-in {
         padding: 10px 24px;
@@ -165,6 +176,14 @@ body {
         &:hover,
         &:focus {
             background-color: #5d8aff;
+        }
+    }
+    &_blue {
+        background-color: #0073f6;
+        &:hover,
+        &:focus {
+            background-color: #5d8aff;
+            color: #fff;
         }
     }
 }
@@ -246,7 +265,7 @@ h6 {
     &__center {
         margin-right: 150px;
     }
-    &__busket {
+    &__basket {
         padding-right: 30px;
     }
     &__promo {
@@ -294,6 +313,11 @@ h6 {
     }
 }
 
+.header-main {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);
+}
+
 .header-fail {
     min-height: 818px;
     background-color: #000;
@@ -338,6 +362,7 @@ h6 {
 }
 
 .form-search {
+    position: relative;
     &__label {
         font-size: 12px;
         color: #a4261f;
@@ -355,8 +380,31 @@ h6 {
         }
     }
     &__input {
-        display: none;
+        opacity: 0;
+        transform: translateY(-200%);
+        transition: all .35s cubic-bezier(.25, .46, .45, .94);
+        border-radius: 25px;
+        height: 24px;
+        color: 626262;
+        font-size: 12px;
+        position: absolute;
+        border: none;
+        outline: none;
+        top: -4px;
+        left: -7px;
+        width: 255px;
+        &.active {
+            opacity: 1;
+            transform: translate(0);
+            transition: all .35s cubic-bezier(.25, .46, .45, .94);
+        }
     }
+}
+
+.form-search__input.form__input_icon {
+    padding-left: 40px;
+    padding-right: 10px;
+    background-position: center left 15px;
 }
 
 .form-search__label:hover:before {
@@ -368,12 +416,14 @@ h6 {
     cursor: pointer;
 }
 
-.busket {
+.basket {
     color: #fff;
     font-weight: 300;
     font-size: 14px;
     letter-spacing: -.035em;
-    &__text {
+    position: relative;
+
+    &__name {
         margin-bottom: 0;
         display: inline-block;
         vertical-align: middle;
@@ -389,9 +439,27 @@ h6 {
             margin-right: 13px;
         }
     }
+
+    &__modal{
+        position: absolute;
+        background-color: #fff;
+        width: 227px;
+        border-radius: 5px;
+        top: 50px;
+        left: -50%;
+    }
+
+    &__top{
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    &__bottom{
+
+    }
 }
 
 .lk {
+    position: relative;
     &__name {
         color: #fff;
         font-size: 14px;
@@ -399,6 +467,13 @@ h6 {
         letter-spacing: -.035em;
         display: inline-block;
         vertical-align: bottom;
+        cursor: pointer;
+        outline: none;
+        &:focus,
+        &:hover,
+        &:active {
+            color: #bf2119;
+        }
         &:before {
             content: '';
             display: inline-block;
@@ -411,6 +486,67 @@ h6 {
             margin-right: 3px;
         }
     }
+    &__modal {
+        top: 40px;
+        left: 20px;
+        width: 400px;
+        position: absolute;
+        background-color: #fff;
+        border-radius: 5px;
+        z-index: 200;
+        padding: 13px 25px 11px;
+        box-shadow: 0px 5px 5px 0px rgba(36, 44, 40, 0.75);
+        opacity: 0;
+        transform: translateY(-200%);
+        transition: all .35s cubic-bezier(.25, .46, .45, .94);
+        &.active {
+            opacity: 1;
+            transform: translate(0);
+            transition: all .35s cubic-bezier(.25, .46, .45, .94);
+        }
+    }
+    &__bottom {
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 10px;
+    }
+    &__buttons {
+        margin-top: 22px;
+        justify-content: space-between;
+    }
+    &__close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-image: url(../img/close-icon.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 100%;
+        width: 17px;
+        height: 18px;
+    }
+    &__btn {
+        height: 50px;
+        padding: 14px 10px;
+        min-width: 133px;
+        &_big {
+            min-width: 196px;
+        }
+    }
+}
+
+.lk__form .form__title {
+    margin-bottom: 12px;
+    padding-right: 20px;
+}
+
+.lk__form .form__input {
+    width: 100%;
+}
+
+.lk__form .form__group {
+    width: 100%;
+    margin-top: 20px;
 }
 
 .contacts-info {
@@ -561,6 +697,18 @@ h6 {
     font-size: 36px;
     text-transform: uppercase;
     color: #fff;
+    z-index: 1;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 101px;
+        height: 4px;
+        background-color: #bf2119;
+        z-index: -1;
+    }
 }
 
 .recomend {
@@ -594,6 +742,7 @@ h6 {
         padding: 10px 15px;
         margin-bottom: 70px;
         width: 227px;
+        position: relative;
     }
     &__name {
         font-size: 14px;
@@ -632,6 +781,29 @@ h6 {
         background-size: 100%;
         width: 20px;
         height: 18px;
+    }
+    &__status {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        padding: 5px;
+        color: #fff;
+        font-size: 18px;
+        letter-spacing: -.025em;
+        &_new {
+            background-color: #19e48c;
+        }
+        &_hit {
+            background-color: #ff4b60;
+        }
     }
 }
 
@@ -882,10 +1054,17 @@ h6 {
     }
 }
 
+.feedback .form__title{
+    font-size: 14px;
+    font-weight: 300;
+}
+
 .form {
     &__title {
-        font-size: 14px;
+        font-size: 16px;
         letter-spacing: -.025em;
+        color: #000;
+        font-weight: 500;
     }
     &__input {
         width: 217px;
@@ -927,6 +1106,7 @@ h6 {
         margin-top: 12px;
     }
     &__label {
+        color: #000;
         &_block {
             display: block;
             margin-bottom: 10px;
@@ -951,12 +1131,17 @@ h6 {
             font-weight: 500;
         }
     }
+    &__link {
+        color: #00baff;
+        font-size: 14px;
+    }
 }
 
 .personal {
     margin-top: 9px;
     font-size: 14px;
     letter-spacing: -.025em;
+    color: #000;
     &__label {
         cursor: pointer;
     }
@@ -1010,6 +1195,10 @@ h6 {
     &__grid {
         justify-content: space-between;
     }
+}
+
+.footer-404 {
+    margin-top: 40px;
 }
 
 .footer__menu .menu__link {
@@ -1077,6 +1266,7 @@ h6 {
     }
     &__dropdown {
         list-style: none;
+        display: none;
     }
 }
 
@@ -1381,6 +1571,7 @@ h6 {
 
 .fail {
     text-align: center;
+    margin-top: 54px;
     &__top {
         text-transform: uppercase;
         font-size: 42px;
@@ -1398,6 +1589,22 @@ h6 {
         line-height: 33px;
         color: #fff;
     }
+    &__btn {
+        min-width: 160px;
+        height: 55px;
+        text-align: center;
+        color: #fff;
+        font-size: 18px;
+        display: inline-block;
+        border-radius: 35px;
+        border: 1px solid #bf2119;
+        padding: 14px 10px;
+        margin-top: 80px;
+        &:hover,
+        &:focus {
+            background-color: #bf2119;
+        }
+    }
 }
 
 .order {
@@ -1411,7 +1618,7 @@ h6 {
     width: 525px;
 }
 
-.order .form__input_icon {
+.form__input_icon {
     background-image: url(../img/icon-search__red.png);
     background-repeat: no-repeat;
     background-position: center left 30px;
@@ -1517,4 +1724,82 @@ h6 {
 
 .getting_row .getting__label {
     margin-right: 58px;
+}
+
+.remodal-close {
+    position: absolute;
+    top: 10px;
+    left: auto;
+    right: 10px;
+    &:before {
+        color: #fff;
+        font-size: 40px;
+    }
+}
+
+.remodal-add {
+    color: #fff;
+    border-radius: 5px;
+    min-height: 325px;
+    background-color: #000;
+    background-image: url(../img/modal-back.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 30px 25px;
+    text-align: center;
+
+
+    &__icon {
+        background-image: url(../img/icon-check.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 100%;
+        width: 72px;
+        height: 72px;
+        margin: 0 auto;
+    }
+    &__title {
+        font-size: 27px;
+        font-weight: 500;
+        letter-spacing: -.025em;
+        margin-top: 23px;
+    }
+    &__p {
+        letter-spacing: -.025em;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    &__bottom {
+        justify-content: space-between;
+        margin-top: 45px;
+    }
+
+    &__btn {
+        min-width: 202px;
+        height: 50px;
+        padding: 17px 10px;
+        border-radius: 35px;
+        color: #fff;
+        text-transform: uppercase;
+
+        &:hover,
+        &:focus{
+            background-color: #d63b33;
+        }
+
+        &_border-red {
+            border: 1px solid #bf2119;
+            background: transparent;
+        }
+        &_bgr-red {
+            background-color: #bf2119;
+        }
+    }
+}
+
+@media only screen and (min-width: 641px) {
+    .remodal {
+        max-width: 515px;
+    }
 }
