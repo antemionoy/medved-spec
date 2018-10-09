@@ -186,6 +186,15 @@ body {
             color: #fff;
         }
     }
+    &_red {
+        background-color: #bf2119;
+        color: #fff;
+        font-weight: 400;
+        &:hover,
+        &:focus {
+            background-color: #d63b33;
+        }
+    }
 }
 
 .btn-mailng {
@@ -337,6 +346,9 @@ h6 {
             content: '/';
             margin: 0px 4px;
         }
+        &:hover {
+            color: #a4261f;
+        }
     }
 }
 
@@ -358,6 +370,12 @@ h6 {
     &__link {
         text-transform: uppercase;
         color: #fff;
+        &:hover {
+            color: #bf2119;
+        }
+        .active {
+            color: #bf2119;
+        }
     }
 }
 
@@ -422,11 +440,11 @@ h6 {
     font-size: 14px;
     letter-spacing: -.035em;
     position: relative;
-
     &__name {
         margin-bottom: 0;
         display: inline-block;
         vertical-align: middle;
+        cursor: pointer;
         &:before {
             content: '';
             display: inline-block;
@@ -439,23 +457,82 @@ h6 {
             margin-right: 13px;
         }
     }
-
-    &__modal{
+    &__modal {
         position: absolute;
         background-color: #fff;
         width: 227px;
         border-radius: 5px;
         top: 50px;
         left: -50%;
+        color: #000;
+        box-shadow: 0px 5px 5px 0px rgba(36, 44, 40, 0.75);
+        opacity: 0;
+        transform: translateY(-200%);
+        transition: all .35s cubic-bezier(.25, .46, .45, .94);
+        &.active {
+            opacity: 1;
+            transform: translate(0);
+            transition: all .35s cubic-bezier(.25, .46, .45, .94);
+        }
     }
-
-    &__top{
+    &__top {
         border-bottom: 1px solid #e1e1e1;
+        padding: 10px 13px 10px 15px;
     }
-
-    &__bottom{
-
+    &__bottom {
+        padding: 10px 20px 10px;
     }
+    &__title {
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: -.025em;
+        color: #000;
+        margin-bottom: 15px;
+    }
+    &__price {
+        margin-top: 4px;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: -.025em;
+        color: #d63b33;
+        flex: 1 1 100%;
+    }
+    &__text {
+        flex: 1 0 0;
+        font-size: 13px;
+        line-height: 14px;
+        margin-left: 12px;
+    }
+    &__row {
+        margin-bottom: 17px;
+        align-items: center;
+        &:last-child {
+            margin-bottom: 4px;
+        }
+    }
+    &__btn {
+        font-size: 13px;
+        font-weight: 500;
+        text-transform: uppercase;
+        height: 56px;
+        padding: 20px 5px;
+        display: block;
+        width: 160px;
+        margin: 7px auto;
+    }
+}
+
+.basket__bottom .basket__text {
+    margin-left: 0;
+}
+
+.basket__row .basket__price {
+    text-align: right;
+}
+
+.basket__bottom {
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .lk {
@@ -1054,7 +1131,7 @@ h6 {
     }
 }
 
-.feedback .form__title{
+.feedback .form__title {
     font-size: 14px;
     font-weight: 300;
 }
@@ -1068,6 +1145,7 @@ h6 {
     }
     &__input {
         width: 217px;
+        max-width: 100%;
         height: 36px;
         border: 1px solid #acacac;
         padding: 5px 10px;
@@ -1076,6 +1154,7 @@ h6 {
     &__textarea {
         border: 1px solid #acacac;
         min-height: 143px;
+        max-width: 100%;
         resize: none;
         margin-top: 49px;
         padding: 5px 10px;
@@ -1134,6 +1213,32 @@ h6 {
     &__link {
         color: #00baff;
         font-size: 14px;
+    }
+}
+
+.data-form .form__input,
+.data-form .form__textarea {
+    width: 325px;
+    margin-top: 0;
+}
+
+.data-form .form__textarea {
+    min-height: 115px;
+}
+
+.data-form .form__small {
+    margin-top: 20px;
+}
+
+.data-form .form__group {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.data-form .form__col {
+    margin-right: 75px;
+    &:last-child {
+        margin-right: 0;
     }
 }
 
@@ -1647,7 +1752,8 @@ h6 {
         border: 1px solid #bcbcbc
     }
     &__label {
-        font-size: 24px;
+        font-size: 21px;
+        line-height: 1;
         letter-spacing: -.025em;
         font-weight: 400;
         color: #000;
@@ -1666,6 +1772,7 @@ h6 {
         font-size: 14px;
         font-weight: 300;
         line-height: 18px;
+        margin-top: 5px;
     }
 }
 
@@ -1692,7 +1799,7 @@ h6 {
 }
 
 .getting__label .getting__checkmark:after {
-    top: 50%;
+    top: 41%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 12px;
@@ -1748,8 +1855,6 @@ h6 {
     background-size: cover;
     padding: 30px 25px;
     text-align: center;
-
-
     &__icon {
         background-image: url(../img/icon-check.png);
         background-repeat: no-repeat;
@@ -1774,7 +1879,6 @@ h6 {
         justify-content: space-between;
         margin-top: 45px;
     }
-
     &__btn {
         min-width: 202px;
         height: 50px;
@@ -1782,12 +1886,10 @@ h6 {
         border-radius: 35px;
         color: #fff;
         text-transform: uppercase;
-
         &:hover,
-        &:focus{
+        &:focus {
             background-color: #d63b33;
         }
-
         &_border-red {
             border: 1px solid #bf2119;
             background: transparent;
@@ -1802,4 +1904,62 @@ h6 {
     .remodal {
         max-width: 515px;
     }
+}
+
+.order {
+    &__count {
+        margin-bottom: 161px;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    &__title {
+        margin-top: 0;
+        margin-bottom: 30px;
+        font-weight: 400;
+    }
+    &__number {
+        width: 22px;
+        height: 22px;
+        background-color: #1a7dff;
+        color: #fff;
+        font-weight: 500;
+        letter-spacing: -.025em;
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__content {
+        margin-left: 15px;
+    }
+}
+
+.registr {
+    padding-left: 56px;
+    margin-top: 50px;
+    &__title {
+        font-weight: 400;
+    }
+    &__text {
+        margin-bottom: 10px;
+        &_regular {
+            font-weight: 400;
+            color: #000;
+        }
+    }
+    &__btn {
+        margin-top: 20px;
+        font-size: 14px;
+        font-weight: 400;
+        height: 54px;
+    }
+}
+
+.registr__form .form__group {
+    margin-bottom: 15px;
+}
+
+.registr__form .form__input {
+    width: 350px;
 }

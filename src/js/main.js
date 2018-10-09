@@ -7,7 +7,6 @@
 "use strict";
 
 
-
 function slideItem(clickItem, showBlock) {
 
     clickItem.click(function(e) {
@@ -55,6 +54,13 @@ $(function() {
     $('.form-search').on('click', function() {
 
         $(this).find('.form-search__input').addClass('active');
+
+    });
+
+
+    $('.basket__name').on('click', function() {
+
+        $(this).parent('.basket').find('.basket__modal').toggleClass('active');
 
     });
 
