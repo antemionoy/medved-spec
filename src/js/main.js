@@ -7,6 +7,44 @@
 "use strict";
 
 
+function quantity() {
+
+    $('<div class="quantity__nav"><div class="quantity__button quantity__button_up">+</div><div class="quantity__button quantity__button_down">-</div></div>').insertAfter('.quantity input');
+    $('.quantity').each(function() {
+        var spinner = $(this),
+            input = spinner.find('input[type="number"]'),
+            btnUp = spinner.find('.quantity__button_up'),
+            btnDown = spinner.find('.quantity__button_down'),
+            min = input.attr('min'),
+            max = input.attr('max');
+
+        btnUp.click(function() {
+            var oldValue = parseFloat(input.val());
+            if (oldValue >= max) {
+                var newVal = oldValue;
+            } else {
+                var newVal = oldValue + 1;
+            }
+            spinner.find("input").val(newVal);
+            spinner.find("input").trigger("change");
+        });
+
+        btnDown.click(function() {
+            var oldValue = parseFloat(input.val());
+            if (oldValue <= min) {
+                var newVal = oldValue;
+            } else {
+                var newVal = oldValue - 1;
+            }
+            spinner.find("input").val(newVal);
+            spinner.find("input").trigger("change");
+        });
+
+    });
+
+}
+
+
 function slideItem(clickItem, showBlock) {
 
     clickItem.click(function(e) {
@@ -48,6 +86,7 @@ function modalLk() {
 
 $(function() {
 
+    quantity();
     modalLk();
     slideItem($('.list__link_parent'), $('.list__dropdown'));
 
