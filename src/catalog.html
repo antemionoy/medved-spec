@@ -6,7 +6,30 @@
                 <aside class="catalog__aside aside">
                     <ul class="aside__list list">
                         <li class="list__item">
-                            <a href="#" class="list__link list__link_active list__link_parent">Спецодежда Зима</a>
+                            <a href="#" class="list__link list__link_parent list__link_active active-item">Спецодежда Зима</a>
+                            <ul class="list__dropdown" style="display: block;">
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list__item">
+                            <a href="#" class="list__link list__link_parent">Спецодежда Зима</a>
                             <ul class="list__dropdown">
                                 <li class="list__item">
                                     <a href="#" class="list__link">Спецодежда Зима</a>
@@ -30,16 +53,121 @@
                         </li>
                         <li class="list__item">
                             <a href="#" class="list__link list__link_parent">Спецодежда Зима</a>
+                            <ul class="list__dropdown">
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="list__item">
                             <a href="#" class="list__link list__link_parent">Спецодежда Зима</a>
-                        </li>
-                        <li class="list__item">
-                            <a href="#" class="list__link list__link_parent">Спецодежда Зима</a>
+                            <ul class="list__dropdown">
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#" class="list__link">Спецодежда Зима</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </aside>
                 <div class="catalog__content">
+                    <form class="catalog__filter form filter">
+                        <div class="filter__row filter__row_justify d-flex">
+                            <div class="form__group">
+                                <label for="#" class="form__label form__label_block ">Цена</label>
+                                <div class="range-box d-flex">
+                                    <input type="text" class="range-box__input form__input" value="10">
+                                    <input type="text" class="range-slider" name="range-slider" value="" />
+                                    <input type="text" class="range-box__input form__input" value="10">
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label for="#" class="form__label form__label_block ">Пол</label>
+                                <div class="select-box">
+                                    <select name="#" id="#" class="form__select">
+                                        <option value="М">М</option>
+                                        <option value="Ж">Ж</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label for="#" class="form__label form__label_block ">Размер</label>
+                                <div class="select-box">
+                                    <select name="#" id="#" class="form__select">
+                                        <option value="40/42">40/42</option>
+                                        <option value="42/44">42/44</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label for="#" class="form__label form__label_block ">Расцветка</label>
+                                <div class="select-box select-box__color">
+                                    <select name="#" id="#" class="form__select">
+                                        <option value="40/42">Красный</option>
+                                        <option value="42/44">Белый</option>
+                                        <option value="42/44">Зеленый</option>
+                                        <option value="42/44">Коричневый</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter__row d-flex">
+                            <div class="form__group">
+                                <label for="#" class="form__label form__label_block">Производитель</label>
+                                <select class="multiple__select" multiple="multiple">
+                                    <option value="1" selected="">Любая</option>
+                                    <option value="2">Любая</option>
+                                </select>
+                            </div>
+                            <div class="form__group">
+                                <label for="#" class="form__label form__label_block">Комплектность</label>
+                                <select class="multiple__select" multiple="multiple">
+                                    <option value="1" selected="">Любая</option>
+                                    <option value="2">Любая</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filter__row d-flex">
+                            <div class="form__group form__group_margin-left d-flex">
+                                <label for="#" class="form__label">Сортировать</label>
+                                <div class="select-box select-box_popular">
+                                    <select name="#" id="#" class="form__select">
+                                        <option value="Популярость" selected="">Популярность</option>
+                                        <option value="Популярость">Популярность</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                     <div class="catalog__goods goods wrap d-flex">
                         <div class="goods__col goods__col_width-33">
                             <div class="goods__card">
@@ -178,25 +306,26 @@
                         </div>
                     </div>
                     <div class="catalog__pagination pagination d-flex">
-                        <a href="#" class="pagination__text">< Предыдущая</a>
-                        <ul class="pagination__list list d-flex">
-                            <li class="list__item ">
-                                <a href="#" class="list__link">1</a>
-                            </li>
-                            <li class="list__item pagination__item_active">
-                                <a href="#" class="list__link">2</a>
-                            </li>
-                            <li class="list__item">
-                                <a href="#" class="list__link">3</a>
-                            </li>
-                            <li class="list__item">
-                                <a href="#" class="list__link">4</a>
-                            </li>
-                            <li class="list__item">
-                                <a href="#" class="list__link">5</a>
-                            </li>
-                        </ul>
-                        <a href="#" class="pagination__text">Следующая ></a>
+                        <a href="#" class="pagination__text">
+                            < Предыдущая</a>
+                                <ul class="pagination__list list d-flex">
+                                    <li class="list__item ">
+                                        <a href="#" class="list__link">1</a>
+                                    </li>
+                                    <li class="list__item pagination__item_active">
+                                        <a href="#" class="list__link">2</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="#" class="list__link">3</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="#" class="list__link">4</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="#" class="list__link">5</a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="pagination__text">Следующая ></a>
                     </div>
                 </div>
             </div>

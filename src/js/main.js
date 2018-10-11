@@ -2,6 +2,8 @@
 //= ../../bower_components/owl.carousel/dist/owl.carousel.js
 //= ../../bower_components/select2/dist/js/select2.min.js
 //= ../../bower_components/remodal/dist/remodal.min.js
+//= ../../bower_components/ion.rangeSlider/js/ion.rangeSlider.js
+//= ../../bower_components/multiple-select/multiple-select.js
 
 
 "use strict";
@@ -83,9 +85,61 @@ function modalLk() {
     });
 }
 
+function selectCheckbox() {
+
+    var expanded = false;
+
+    function showCheckboxes(check) {
+        var checkboxes = document.getElementById(check);
+        if (!expanded) {
+            checkboxes.style.display = "block";
+            expanded = true;
+        } else {
+            checkboxes.style.display = "none";
+            expanded = false;
+        }
+    }
+
+
+    $('.selectBox').on('click', function() {
+
+        showCheckboxes('checkboxes-1');
+        showCheckboxes('checkboxes');
+
+    });
+
+}
+
+
+// function stepsItem() {
+
+//     var item = $('.steps__item');
+
+//     item.each(function() {
+
+//         $('.steps__nav-item_next').on('click', function() {
+
+
+//             if (item.hasClass('active')) {
+
+//                 item.removeClass('active')
+
+//                 item.closest(item).addClass('active');
+
+//             }
+
+//         });
+
+//     });
+
+
+// }
+
 
 $(function() {
 
+    // selectCheckbox();
+    // stepsItem();
     quantity();
     modalLk();
     slideItem($('.list__link_parent'), $('.list__dropdown'));
@@ -161,5 +215,28 @@ $(function() {
             }
         }
     });
+
+
+    $('.multiple__select').multipleSelect({
+        selectAll: false
+    });
+
+    $(".range-slider").ionRangeSlider({
+        type: "double",
+        min: 1000,
+        max: 2000,
+        from: 1200,
+        to: 1800,
+        hide_min_max: true,
+        hide_from_to: true,
+        grid: false
+    });
+
+    $('.form__select').select2({
+        minimumResultsForSearch: -1,
+        dropdownAutoWidth: true
+
+    });
+
 
 });

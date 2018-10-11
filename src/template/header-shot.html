@@ -16,31 +16,79 @@
             <div class="header__container container">
                 <div class="header__row d-flex">
                     <div class="header__lk lk">
-                        <div class="lk__name">Личный кабинет</div>
+                        <button class="lk__name  header__name-js">Личный кабинет</button>
+                        <div class="lk__modal">
+                            <form action="#" class="lk__form form">
+                                <div class="form__title">Вход в личный кабинет</div>
+                                <div class="form__group">
+                                    <label for="#" class="form__label form__label_block ">Логин <span class="form__req">*</span></label>
+                                    <input type="text" class="form__input">
+                                </div>
+                                <div class="form__group">
+                                    <label for="#" class="form__label form__label_block ">Пароль <span class="form__req">*</span></label>
+                                    <input type="text" class="form__input">
+                                </div>
+                                <div class="lk__bottom d-flex">
+                                    <div class="form__personal personal">
+                                        <input id="personal_0" type="checkbox" class="personal__input">
+                                        <label for="personal_0" class="personal__label">Запомнить меня</label>
+                                    </div>
+                                    <a href="#" class="form__link">Забыли пароль?</a>
+                                </div>
+                                <div class="lk__buttons d-flex">
+                                    <a href="#" class="lk__btn btn btn_blue">Войти</a>
+                                    <a href="#" class="lk__btn lk__btn_big btn btn_stule-blue">Регистрация</a>
+                                </div>
+                            </form>
+                            <a href="#" class="lk__close"></a>
+                        </div>
                     </div>
-                    <ul class="header__menu menu d-flex">
-                        <li class="menu__item">
-                            <a href="#" class="menu__link">О нас</a>
-                        </li>
-                        <li class="menu__item">
-                            <a href="#" class="menu__link">Каталог товаров</a>
-                        </li>
-                        <li class="menu__item">
-                            <a href="#" class="menu__link">Доставка и оплата</a>
-                        </li>
-                        <li class="menu__item">
-                            <a href="#" class="menu__link">Контакты</a>
-                        </li>
-                        <li class="menu__item">
-                            <a href="#" class="menu__link"></a>
-                        </li>
-                    </ul>
-                    <form class="header__search form-search">
-                        <label class="form-search__label">поиск</label>
-                        <input class="form-search__input" type="text">
-                    </form>
-                    <div class="header__busket busket">
-                        <p class="busket__text">В корзине: <span class="busket__value">1</span></p>
+                    <div class="header__center d-flex">
+                        <ul class="header__menu menu d-flex">
+                            <li class="menu__item">
+                                <a href="#" class="menu__link">О нас</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#" class="menu__link">Каталог товаров</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#" class="menu__link">Доставка и оплата</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#" class="menu__link">Контакты</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#" class="menu__link"></a>
+                            </li>
+                        </ul>
+                        <form class="header__search form-search">
+                            <label class="form-search__label">поиск</label>
+                            <input class="form-search__input form__input_icon" type="text" placeholder="введите название товара">
+                        </form>
+                    </div>
+                    <div class="header__basket basket">
+                        <p class="basket__name">В корзине: <span class="busket__value">1</span></p>
+                        <div class="basket__modal">
+                            <div class="basket__top">
+                                <div class="basket__title">Ваш заказ:</div>
+                                <div class="basket__row d-flex wrap">
+                                    <img src="../img/maska-small.png" class="basket__image" alt="">
+                                    <div class="basket__text">Маска сварщика 3М™ (светофильтр 54*107 мм)</div>
+                                    <div class="basket__price">22 300р</div>
+                                </div>
+                                <div class="basket__row d-flex wrap">
+                                    <img src="../img/glasess-small.png" class="basket__image" alt="">
+                                    <div class="basket__text">Маска сварщика 3М™ (светофильтр 54*107 мм)</div>
+                                    <div class="basket__price">22 300р</div>
+                                </div>
+                            </div>
+                            <div class="basket__bottom">
+                                <div class="basket__text">Стомисоть товаров:
+                                    <div class="basket__price">22 300р</div>
+                                </div>
+                                <a href="#" class="basket__btn btn btn_red">Оформить Заказ</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
